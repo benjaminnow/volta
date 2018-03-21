@@ -1,0 +1,23 @@
+.name {
+  font-family: 'Roboto', sans-serif;
+  color: white;
+  background: orange;
+  position: fixed;
+  width: 100%;
+  margin-top: 0px;
+}
+
+h3 {
+  font-family: 'Roboto', sans-serif;
+}
+
+p {
+  font-family: 'Open Sans', sans-serif;
+}
+
+.person {
+  padding-top: 2em;
+  margin-left: 2em;
+  margin-right: 2em;
+  margin-bottom: 5em;
+}
