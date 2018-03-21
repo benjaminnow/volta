@@ -5,18 +5,21 @@
   position: fixed;
   width: 100%;
   margin-top: 0px;
+  font-size: 5em;
 }
 
 h3 {
   font-family: 'Roboto', sans-serif;
+  font-size: 3em;
 }
 
 p {
   font-family: 'Open Sans', sans-serif;
+  font-size: 2em;
 }
 
 .person {
-  padding-top: 2em;
+  padding-top: 3em;
   margin-left: 2em;
   margin-right: 2em;
   margin-bottom: 5em;
