@@ -24,3 +24,9 @@ p {
   margin-right: 2em;
   margin-bottom: 5em;
 }
+
+.divider {
+  background:orange;
+  width: 100%;
+  height: 3em;
+}
