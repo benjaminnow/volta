@@ -1,3 +1,6 @@
 data.csv
 venv/
 templates/
+__pycache__/
+uploads/
+static/

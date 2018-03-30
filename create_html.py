@@ -9,10 +9,12 @@ ENV = Environment(
     loader=FileSystemLoader(os.path.join(PATH, 'templates'))
 )
 
+UPLOAD_FOLDER = '/home/ben/programming/volta/uploads/'
+CREATED_FOLDER = '/home/ben/programming/volta/templates/created_pages/'
 
-def create_dict():
+def create_dict(filename):
     data = {}
-    with open('data.csv', newline='') as f:
+    with open(UPLOAD_FOLDER + filename, newline='') as f:
         reader = csv.DictReader(f, fieldnames=['Account','Contact','Title','Activity','Subject','Notes'])
         account = None
         for row in reader:
@@ -40,16 +42,9 @@ def create_dict():
     for keys in keys_to_delete:
         del data[keys]
 
-    return data
-
-
-# takes data from dict and sends it to jinja template
-def create_template(data):
+    # takes data from dictionary created above and puts it into the base template    
     template = ENV.get_template('base.html')
+    with open(CREATED_FOLDER + filename.split(".")[0] + ".html", 'w') as f:
+        f.write(template.render(data=data))
+
     print(template.render(data=data))
-
-
-#pp = pprint.PrettyPrinter(indent=4)
-#pp.pprint(create_dict())
-#pp.pprint(create_template(create_dict()))
-create_template(create_dict())
