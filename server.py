@@ -8,8 +8,14 @@ from create_html import *
 UPLOAD_FOLDER = '/home/ben/programming/volta/uploads/'
 ALLOWED_EXTENSIONS = set(['csv'])
 
-app = Flask(__name__, template_folder='/home/ben/programming/volta/templates/created_pages/', static_url_path='/static')
+app = Flask(__name__)
+#template_folder='/home/ben/programming/volta/templates/created_pages/', static_url_path='/static'
 app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
+
+
+#@app.route('/login')
+#def login():
+
 
 
 def allowed_file(filename):
@@ -53,7 +59,16 @@ def upload_file():
 
 @app.route('/report/<date>')
 def report(date):
-    return render_template(date + ".html")
+    return render_template("created_pages/" + date + ".html")
+
+
+@app.route('/reports')
+def reports():
+    report_list = os.listdir('/home/ben/programming/volta/templates/created_pages/')
+    for i in range(len(report_list)):
+        report_list[i] = report_list[i].split(".")[0]
+
+    return render_template('reports.html', report_list=report_list)
 
 
 @app.route('/uploads/<filename>')

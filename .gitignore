@@ -3,4 +3,3 @@ venv/
 templates/
 __pycache__/
 uploads/
-static/

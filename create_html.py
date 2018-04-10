@@ -42,7 +42,7 @@ def create_dict(filename):
     for keys in keys_to_delete:
         del data[keys]
 
-    # takes data from dictionary created above and puts it into the base template    
+    # takes data from dictionary created above and puts it into the base template
     template = ENV.get_template('base.html')
     with open(CREATED_FOLDER + filename.split(".")[0] + ".html", 'w') as f:
         f.write(template.render(data=data))
